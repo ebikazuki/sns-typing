@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  letter-spacing: 0.3em;
+}
+
+.newRecord {
+  color: var(--color-combo);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  animation: glow 0.8s infinite alternate;
+}
+
+@keyframes glow {
+  to {
+    text-shadow: 0 0 10px var(--color-combo);
+  }
+}
+
+.rank {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.rankS { color: var(--color-combo); }
+.rankA { color: var(--color-correct); }
+.rankB { color: var(--accent-flame); }
+.rankC { color: var(--text-secondary); }
+.rankD { color: var(--text-muted); }
+
+.score {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent-flame);
+}
+
+.scoreUnit {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.75rem;
+  width: 100%;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+.statValue {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.missValue {
+  color: var(--color-miss);
+}
+
+.weakKeys {
+  width: 100%;
+  background: var(--bg-secondary);
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.weakKeysTitle {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.weakKeysList {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.weakKey {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--bg-card);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+.keyChar {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--color-miss);
+  font-size: 1rem;
+}
+
+.keyCount {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.retryButton {
+  padding: 0.75rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-flame), #e85d26);
+  border-radius: 50px;
+  letter-spacing: 0.15em;
+  transition: transform 0.15s;
+}
+
+.retryButton:hover {
+  transform: scale(1.05);
+}
+
+.titleButton {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  background: var(--bg-card);
+  border-radius: 50px;
+  letter-spacing: 0.15em;
+  transition: transform 0.15s;
+}
+
+.titleButton:hover {
+  transform: scale(1.05);
+  color: var(--text-primary);
+}

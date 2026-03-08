@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 640px;
+  padding: 0.75rem 1rem;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 12px 12px 0 0;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+  min-width: 60px;
+}
+
+.timer.urgent {
+  color: var(--color-miss);
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  to { opacity: 0.5; }
+}
+
+.score {
+  font-size: 1.3rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--accent-flame);
+}
+
+.scoreLabel {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-left: 4px;
+}
+
+.combo {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--color-combo);
+  font-weight: 700;
+}
+
+.comboCount {
+  font-size: 1.2rem;
+  font-family: var(--font-mono);
+}
+
+.comboLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.multiplier {
+  font-size: 0.8rem;
+  color: var(--color-combo);
+  font-family: var(--font-mono);
+}

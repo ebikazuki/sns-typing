@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.flame {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-flame);
+  letter-spacing: 0.3em;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--accent-flame), var(--color-combo));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.startButton {
+  margin-top: 1rem;
+  padding: 1rem 4rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent-flame), #e85d26);
+  border-radius: 50px;
+  letter-spacing: 0.2em;
+  transition: transform 0.15s, box-shadow 0.15s;
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+}
+
+.startButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+}
+
+.highScore {
+  color: var(--color-combo);
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: var(--font-mono);
+}
+
+.instructions {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.8;
+}
