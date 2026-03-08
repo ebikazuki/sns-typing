@@ -33,7 +33,7 @@ function App() {
     case 'title':
       return <TitleScreen highScore={highScore} onStart={startGame} />;
     case 'game':
-      return <GameScreen key={gameKey} onGameEnd={handleGameEnd} />;
+      return <GameScreen key={gameKey} onGameEnd={handleGameEnd} onCancel={handleBackToTitle} />;
     case 'result':
       return (
         <ResultScreen

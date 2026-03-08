@@ -1,8 +1,8 @@
 import type { FlameThread, GameQuestion } from '../types/phrase';
 
 /**
- * 投稿→リプ3回の繰り返しで出題リストを生成する。
- * 投稿はランダム順で繰り返し、各投稿から3つのリプをランダム選出。
+ * 投稿タイピング→リプ3回の繰り返しで出題リストを生成する。
+ * 各ラウンド: 投稿1問 + リプ3問 = 4問。
  */
 export function generateQuestions(
   threads: FlameThread[],
@@ -22,10 +22,21 @@ export function generateQuestions(
     const shuffled = [...thread.replies].sort(() => Math.random() - 0.5);
     const selected = shuffled.slice(0, repliesPerPost);
 
+    // 投稿フェーズ
+    result.push({
+      post: thread.post,
+      reply: selected[0],
+      phase: 'post',
+      replyIndex: 0,
+      replyTotal: repliesPerPost,
+    });
+
+    // リプフェーズ
     for (let j = 0; j < selected.length; j++) {
       result.push({
         post: thread.post,
         reply: selected[j],
+        phase: 'reply',
         replyIndex: j,
         replyTotal: repliesPerPost,
       });

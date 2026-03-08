@@ -2,7 +2,7 @@ import type { FlameThread } from '../types/phrase';
 
 export const flameThreads: FlameThread[] = [
   {
-    post: { id: 'p1', display: '最近の若者って本読まなすぎじゃない？' },
+    post: { id: 'p1', display: '最近の若者って本読まなすぎじゃない？', kana: 'さいきんのわかものってほんよまなすぎじゃない？' },
     replies: [
       { id: 'r1', display: '今日はよく燃えますね', kana: 'きょうはよくもえますね' },
       { id: 'r2', display: 'それってあなたの感想ですよね', kana: 'それってあなたのかんそうですよね' },
@@ -11,7 +11,7 @@ export const flameThreads: FlameThread[] = [
     ],
   },
   {
-    post: { id: 'p2', display: 'AIでプログラマーの仕事は全部なくなると思う' },
+    post: { id: 'p2', display: 'AIでプログラマーの仕事は全部なくなると思う', kana: 'えーあいでぷろぐらまーのしごとはぜんぶなくなるとおもう' },
     replies: [
       { id: 'r5', display: '情弱ですね', kana: 'じょうじゃくですね' },
       { id: 'r6', display: '文脈を理解してから発言してください', kana: 'ぶんみゃくをりかいしてからはつげんしてください' },
@@ -20,7 +20,7 @@ export const flameThreads: FlameThread[] = [
     ],
   },
   {
-    post: { id: 'p3', display: '努力できない人は自己責任だと思う' },
+    post: { id: 'p3', display: '努力できない人は自己責任だと思う', kana: 'どりょくできないひとはじこせきにんだとおもう' },
     replies: [
       { id: 'r9', display: 'ちょっと何言ってるかわからない', kana: 'ちょっとなにいってるかわからない' },
       { id: 'r10', display: '理解力なさすぎ', kana: 'りかいりょくなさすぎ' },

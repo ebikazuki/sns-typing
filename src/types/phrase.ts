@@ -1,7 +1,8 @@
-/** 炎上投稿（表示のみ、タイピング不要） */
+/** 炎上投稿（タイピング対象） */
 export interface FlamePost {
   id: string;
   display: string;
+  kana: string;
 }
 
 /** リプフレーズ（タイピング対象） */
@@ -21,6 +22,7 @@ export interface FlameThread {
 export interface GameQuestion {
   post: FlamePost;
   reply: FlameReply;
+  phase: 'post' | 'reply';
   replyIndex: number;
   replyTotal: number;
 }

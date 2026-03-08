@@ -15,9 +15,10 @@ const GAME_DURATION = 60;
 
 interface Props {
   onGameEnd: (result: GameResult) => void;
+  onCancel: () => void;
 }
 
-export function GameScreen({ onGameEnd }: Props) {
+export function GameScreen({ onGameEnd, onCancel }: Props) {
   const [questions] = useState(() => generateQuestions(flameThreads, 30));
   const [questionIndex, setQuestionIndex] = useState(0);
   const [started, setStarted] = useState(false);
@@ -64,8 +65,15 @@ export function GameScreen({ onGameEnd }: Props) {
     setQuestionIndex(prev => prev + 1);
   }, [scoreDispatch]);
 
+  // phase に応じてタイピング対象を切り替え
+  const typingTarget = currentQuestion
+    ? currentQuestion.phase === 'post'
+      ? currentQuestion.post
+      : currentQuestion.reply
+    : null;
+
   const { inputState, displaySegments, kanaProgress } = useTyping(
-    currentQuestion?.reply ?? null,
+    typingTarget,
     started,
     { onCorrect: handleCorrect, onMiss: handleMiss, onPhraseComplete: handlePhraseComplete }
   );
@@ -76,6 +84,17 @@ export function GameScreen({ onGameEnd }: Props) {
       setMissedKeysAll(inputState.missedKeys);
     }
   }, [inputState?.missedKeys]);
+
+  // ESCキーでタイトルに戻る
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onCancel();
+      }
+    };
+    window.addEventListener('keydown', handleEsc);
+    return () => window.removeEventListener('keydown', handleEsc);
+  }, [onCancel]);
 
   // 最初のキー入力でタイマー開始
   useEffect(() => {

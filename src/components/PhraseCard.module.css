@@ -67,3 +67,16 @@
   line-height: 1.5;
   font-weight: 500;
 }
+
+.activePhase {
+  background: rgba(255, 100, 50, 0.08);
+  border-left: 3px solid var(--accent-flame);
+}
+
+.phaseLabel {
+  font-size: 0.7rem;
+  color: var(--accent-flame);
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
