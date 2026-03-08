@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+      target: production
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 128M
