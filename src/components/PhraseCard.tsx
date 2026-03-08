@@ -1,26 +1,35 @@
 import styles from './PhraseCard.module.css';
-import type { FlamePhrase } from '../types/phrase';
+import type { GameQuestion } from '../types/phrase';
 
 interface Props {
-  phrase: FlamePhrase;
+  question: GameQuestion;
 }
 
-export function PhraseCard({ phrase }: Props) {
+export function PhraseCard({ question }: Props) {
   return (
     <div className={styles.card}>
-      <div className={styles.header}>
-        <div className={styles.avatar}>
-          <span>炎</span>
+      <div className={styles.postSection}>
+        <div className={styles.header}>
+          <div className={styles.avatar}>
+            <span>炎</span>
+          </div>
+          <div className={styles.userInfo}>
+            <span className={styles.displayName}>炎上太郎</span>
+            <span className={styles.handle}>@enjou_taro</span>
+          </div>
         </div>
-        <div className={styles.userInfo}>
-          <span className={styles.displayName}>炎上タイパー</span>
-          <span className={styles.handle}>@flame_typer</span>
+        <div className={styles.postContent}>
+          {question.post.display}
         </div>
       </div>
-      <div className={styles.content}>
-        {phrase.display}
+      <div className={styles.replySection}>
+        <div className={styles.replyLabel}>
+          返信 {question.replyIndex + 1}/{question.replyTotal}
+        </div>
+        <div className={styles.replyContent}>
+          {question.reply.display}
+        </div>
       </div>
-      <div className={styles.inputLabel}>このコメントを投稿せよ</div>
     </div>
   );
 }

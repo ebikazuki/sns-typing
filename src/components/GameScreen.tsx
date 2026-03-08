@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { GameResult } from '../types/game';
 import { getRank } from '../types/game';
-import { flamePhrases } from '../data/flamePhrases';
+import { flameThreads } from '../data/flamePhrases';
 import { generateQuestions } from '../utils/questionGenerator';
 import { useTimer } from '../hooks/useTimer';
 import { useScore } from '../hooks/useScore';
@@ -18,7 +18,7 @@ interface Props {
 }
 
 export function GameScreen({ onGameEnd }: Props) {
-  const [questions] = useState(() => generateQuestions(flamePhrases, 100));
+  const [questions] = useState(() => generateQuestions(flameThreads, 30));
   const [questionIndex, setQuestionIndex] = useState(0);
   const [started, setStarted] = useState(false);
   const [missedKeysAll, setMissedKeysAll] = useState<Record<string, number>>({});
@@ -49,7 +49,7 @@ export function GameScreen({ onGameEnd }: Props) {
 
   const timer = useTimer(GAME_DURATION, handleTimeUp);
 
-  const currentPhrase = questions[questionIndex] ?? null;
+  const currentQuestion = questions[questionIndex] ?? null;
 
   const handleCorrect = useCallback(() => {
     scoreDispatch({ type: 'CORRECT' });
@@ -65,7 +65,7 @@ export function GameScreen({ onGameEnd }: Props) {
   }, [scoreDispatch]);
 
   const { inputState, displaySegments, kanaProgress } = useTyping(
-    currentPhrase,
+    currentQuestion?.reply ?? null,
     started,
     { onCorrect: handleCorrect, onMiss: handleMiss, onPhraseComplete: handlePhraseComplete }
   );
@@ -99,7 +99,7 @@ export function GameScreen({ onGameEnd }: Props) {
         score={scoreState.score}
         combo={scoreState.combo}
       />
-      {currentPhrase && <PhraseCard phrase={currentPhrase} />}
+      {currentQuestion && <PhraseCard question={currentQuestion} />}
       <TypingArea
         kanaProgress={kanaProgress}
         displaySegments={displaySegments}

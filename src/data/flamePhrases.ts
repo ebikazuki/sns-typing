@@ -1,34 +1,31 @@
-import type { FlamePhrase } from '../types/phrase';
+import type { FlameThread } from '../types/phrase';
 
-export const flamePhrases: FlamePhrase[] = [
-  { id: '1', display: 'それってあなたの感想ですよね？', kana: 'それってあなたのかんそうですよね？' },
-  { id: '2', display: 'はい論破', kana: 'はいろんぱ' },
-  { id: '3', display: '効いてて草', kana: 'きいててくさ' },
-  { id: '4', display: 'お気持ち表明ですか？', kana: 'おきもちひょうめいですか？' },
-  { id: '5', display: 'だが買わぬ！', kana: 'だがかわぬ！' },
-  { id: '6', display: 'で、ソースは？', kana: 'で、そーすは？' },
-  { id: '7', display: '主語がでかい', kana: 'しゅごがでかい' },
-  { id: '8', display: '早口で言ってそう', kana: 'はやくちでいってそう' },
-  { id: '9', display: '何目線で物言ってんの？', kana: 'なにめせんでものいってんの？' },
-  { id: '10', display: '誰も聞いてない', kana: 'だれもきいてない' },
-  { id: '11', display: 'お前がそう思うならそうなんだろう', kana: 'おまえがそうおもうならそうなんだろう' },
-  { id: '12', display: '嘘松乙', kana: 'うそまつおつ' },
-  { id: '13', display: '何様のつもりだよ', kana: 'なにさまのつもりだよ' },
-  { id: '14', display: '意識だけ高くて草', kana: 'いしきだけたかくてくさ' },
-  { id: '15', display: 'エアプ乙', kana: 'えあぷおつ' },
-  { id: '16', display: 'にわかは黙ってて', kana: 'にわかはだまってて' },
-  { id: '17', display: '長文で必死すぎ', kana: 'ちょうぶんでひっしすぎ' },
-  { id: '18', display: 'ブーメランで草', kana: 'ぶーめらんでくさ' },
-  { id: '19', display: 'まーた始まった', kana: 'まーたはじまった' },
-  { id: '20', display: '老害ムーブやめろ', kana: 'ろうがいむーぶやめろ' },
-  { id: '21', display: '顔真っ赤で草', kana: 'かおまっかでくさ' },
-  { id: '22', display: 'どの口が言ってんだ', kana: 'どのくちがいってんだ' },
-  { id: '23', display: '必死すぎて引くわ', kana: 'ひっしすぎてひくわ' },
-  { id: '24', display: '自分語り乙', kana: 'じぶんがたりおつ' },
-  { id: '25', display: '謝罪はよ', kana: 'しゃざいはよ' },
-  { id: '26', display: '炎上商法おつかれ', kana: 'えんじょうしょうほうおつかれ' },
-  { id: '27', display: '知らんけど', kana: 'しらんけど' },
-  { id: '28', display: 'マジで言ってる？', kana: 'まじでいってる？' },
-  { id: '29', display: '通報しました', kana: 'つうほうしました' },
-  { id: '30', display: 'これだから素人は', kana: 'これだからしろうとは' },
+export const flameThreads: FlameThread[] = [
+  {
+    post: { id: 'p1', display: '最近の若者って本読まなすぎじゃない？' },
+    replies: [
+      { id: 'r1', display: '今日はよく燃えますね', kana: 'きょうはよくもえますね' },
+      { id: 'r2', display: 'それってあなたの感想ですよね', kana: 'それってあなたのかんそうですよね' },
+      { id: 'r3', display: 'それは違うと思います', kana: 'それはちがうとおもいます' },
+      { id: 'r4', display: '論点ずれてますよ', kana: 'ろんてんずれてますよ' },
+    ],
+  },
+  {
+    post: { id: 'p2', display: 'AIでプログラマーの仕事は全部なくなると思う' },
+    replies: [
+      { id: 'r5', display: '情弱ですね', kana: 'じょうじゃくですね' },
+      { id: 'r6', display: '文脈を理解してから発言してください', kana: 'ぶんみゃくをりかいしてからはつげんしてください' },
+      { id: 'r7', display: 'それは完全に論点が違います', kana: 'それはかんぜんにろんてんがちがいます' },
+      { id: 'r8', display: '現場からは以上です', kana: 'げんばからはいじょうです' },
+    ],
+  },
+  {
+    post: { id: 'p3', display: '努力できない人は自己責任だと思う' },
+    replies: [
+      { id: 'r9', display: 'ちょっと何言ってるかわからない', kana: 'ちょっとなにいってるかわからない' },
+      { id: 'r10', display: '理解力なさすぎ', kana: 'りかいりょくなさすぎ' },
+      { id: 'r11', display: 'タイトルしか読んでないでしょ', kana: 'たいとるしかよんでないでしょ' },
+      { id: 'r12', display: 'さっきの発言で炎上してるけど別に間違ってないと思う', kana: 'さっきのはつげんでえんじょうしてるけどべつにまちがってないとおもう' },
+    ],
+  },
 ];

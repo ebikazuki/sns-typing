@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import type { InputState } from '../types/romaji';
-import type { FlamePhrase } from '../types/phrase';
+import type { FlameReply } from '../types/phrase';
 import { parseToChunks } from '../utils/chunkParser';
 import { createInputState, judgeKeyPress } from '../utils/inputJudge';
 import { getDisplaySegments, getKanaProgress } from '../utils/displayRomaji';
@@ -12,7 +12,7 @@ interface UseTypingCallbacks {
 }
 
 export function useTyping(
-  phrase: FlamePhrase | null,
+  phrase: FlameReply | null,
   active: boolean,
   callbacks: UseTypingCallbacks
 ) {

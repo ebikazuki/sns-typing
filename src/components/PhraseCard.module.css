@@ -2,6 +2,10 @@
   width: 100%;
   max-width: 640px;
   background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.postSection {
   padding: 1rem 1.25rem;
   border-bottom: 1px solid var(--border-color);
 }
@@ -10,18 +14,18 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-flame), var(--color-combo));
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
@@ -32,24 +36,34 @@
 
 .displayName {
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .handle {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
 }
 
-.content {
-  font-size: 1.25rem;
-  line-height: 1.6;
-  margin-bottom: 0.75rem;
-  font-weight: 500;
+.postContent {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-secondary);
 }
 
-.inputLabel {
-  font-size: 0.75rem;
+.replySection {
+  padding: 0.75rem 1.25rem;
+}
+
+.replyLabel {
+  font-size: 0.7rem;
   color: var(--accent-flame);
   letter-spacing: 0.1em;
   font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.replyContent {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  font-weight: 500;
 }
